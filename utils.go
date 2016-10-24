@@ -64,8 +64,8 @@ const (
 	upper strCase = true
 )
 
-// ToDBName convert string to db name
-func ToDBName(name string) string {
+// ToSnakeCase converts name to snake case
+func ToSnakeCase(name string) string {
 	if v := smap.Get(name); v != "" {
 		return v
 	}
@@ -134,7 +134,7 @@ func toQueryMarks(primaryValues [][]interface{}) string {
 
 	for _, primaryValue := range primaryValues {
 		var marks []string
-		for _,_ = range primaryValue {
+		for _, _ = range primaryValue {
 			marks = append(marks, "?")
 		}
 

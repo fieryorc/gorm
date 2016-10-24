@@ -17,6 +17,11 @@ var DefaultTableNameHandler = func(db *DB, defaultTableName string) string {
 	return defaultTableName
 }
 
+// ToDBName converts given field name to column name
+var ToDBName = func(name string) string {
+	return ToSnakeCase(name)
+}
+
 type safeModelStructsMap struct {
 	m map[reflect.Type]*ModelStruct
 	l *sync.RWMutex
